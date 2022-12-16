@@ -56,6 +56,8 @@ func Completions(msg string) (string, error) {
 		FrequencyPenalty: 0,
 		PresencePenalty:  0,
 	}
+	// 从配置文件中加载model
+	requestBody.Model = config.LoadConfig().Model
 	requestData, err := json.Marshal(requestBody)
 
 	if err != nil {
