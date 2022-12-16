@@ -16,6 +16,8 @@ type Configuration struct {
 	AutoPass bool `json:"auto_pass"`
 	// 会话超时时间
 	SessionTimeout time.Duration `json:"session_timeout"`
+	// 模型
+	Model string `json:"model"`
 }
 
 var config *Configuration
@@ -58,6 +60,14 @@ func LoadConfig() *Configuration {
 				return
 			}
 			config.SessionTimeout = duration
+		}
+		// 添加新的配置参数.模型.
+		Model := os.Getenv("model")
+		if Model != "" {
+			config.Model = Model
+		} else {
+			// 默认.
+			config.Model = "text-davinci-003"
 		}
 	})
 	return config
