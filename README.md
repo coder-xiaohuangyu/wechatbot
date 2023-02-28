@@ -1,3 +1,7 @@
+# 推荐仓:
+https://github.com/ZYallers/chatgpt_wechat_robot
+因同属一个父,无法fork.
+
 # wechatbot
 > 最近chatGPT异常火爆，本项目可以将个人微信化身GPT机器人，
 > 项目基于[openwechat](https://github.com/eatmoreapple/openwechat) 开发。
